@@ -1,0 +1,13 @@
+<p>edit works!</p>
+<form #editForm = 'ngForm' (ngSubmit) = 'editPrice()'>
+    <label> Book Price
+    <input type=number [(ngModel)]='editBook.price' name='price' #price = ngModel>
+     </label> 
+     <div class="form-group ">
+        <button type="submit" class="btn btn-success center-block">edit</button>
+       </div>
+      
+</form>
+<div *ngIf = "edited" >
+<a [routerLink]="['/master']"  > Go Back </a>
+</div>

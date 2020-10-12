@@ -1,0 +1,30 @@
+<h1>Welcome to Books Store</h1>
+
+
+
+<table class="table table-bordered ">
+    <thead>
+      <tr>
+          <th style="text-align: center">
+          BookID
+         </th>
+         <th style="text-align: center">
+         BookTitle
+        </th>
+      </tr>
+    </thead>
+    <tbody style="text-align: center" >
+        <tr *ngFor= "let book of books">   
+            <td>
+              {{book.id}}
+            </td>
+            <td>
+              {{book.title}}
+            </td>
+        </tr>
+    </tbody>
+
+
+</table>
+
+<a [routerLink] = '["/master"]'>See All Books</a>

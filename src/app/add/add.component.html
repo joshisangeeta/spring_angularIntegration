@@ -1,0 +1,43 @@
+<h1 class="pageheader">Add Project Form</h1>
+
+<form #bookForm='ngForm'(ngSubmit)='bookForm.valid && addBook()'>
+  <div class="form-group col-md-4">
+    <label >
+        Book Title*
+    </label>
+    <input type="text" class="form-control" name="title" [(ngModel)]="newBook.title" placeholder="Book Title" required #title="ngModel">
+    <div  style="color:red" *ngIf="title.errors && bookForm.submitted">
+        
+        Book Title is required!
+        
+    </div>
+  </div>
+  <div class="form-group col-md-4">
+      <label >
+        Book Author*
+      </label>
+    <input type="text" class="form-control" name="author" [(ngModel)]="newBook.author" placeholder="Book Author" required #author="ngModel">
+     <div  style="color:red" *ngIf="author.errors && bookForm.submitted">
+      
+      Book Author is required!
+      
+     </div>
+ </div>
+ <div class="form-group col-md-4">
+    <label >
+        Book Price*
+      </label>
+    <input type="text" class = "form-control" name="price" [(ngModel)]="newBook.price" placeholder="Book Price" required #price="ngModel">
+     <div  style="color:red" *ngIf="price.errors && bookForm.submitted">
+      
+      Book Price is required!
+      
+     </div>
+  </div>
+   <div>
+    <button type="submit" >Add Book</button>
+   </div> 
+</form>
+<div *ngIf='isAdd'>
+  <a [routerLink]='["/master"]' >Back</a>
+</div>

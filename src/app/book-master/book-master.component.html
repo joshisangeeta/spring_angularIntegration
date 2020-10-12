@@ -1,0 +1,24 @@
+<p>book-master works!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Book ID</th>
+            <th>Book Title</th>
+            <th>Book Author</th>
+            <th>Book Price</th>
+        </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor = "let book of books" >
+          <td><a [routerLink]='["/details",book.id]'> {{ book.id }}</a></td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.price }}</td>
+          <td><a [routerLink]='["/edit",book.id]'>Edit Price</a></td>
+          <td><button type = "button" class= "btn btn-link"  (click)="deleteBook(book.id)">Delete Book</button></td>
+          
+        </tr>
+       <a [routerLink]='["/addbook"]'>Add New Book</a>
+   </tbody>
+</table> 
+<a [routerLink] = '["/dashboard"]'>Go to Dashboard</a>
