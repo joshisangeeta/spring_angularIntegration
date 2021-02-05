@@ -12,8 +12,8 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     
-    this.dataService.getBooks().subscribe(books=>this.books=books)
-
+    //this.dataService.getBooks().subscribe(books=>this.books=books)
+    this.dataService.getLatestBooks().subscribe(books=>this.books=books);
   }
 
 }
